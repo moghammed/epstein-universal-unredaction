@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from epsleuth.utils.coords import (
+from epstein_universal_unredaction.utils.coords import (
     denormalise_to_mm,
     mm_to_pts,
     normalise,

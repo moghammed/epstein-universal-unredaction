@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import logging
 
-from epsleuth.payload import Payload
+from epstein_universal_unredaction.payload import Payload
 
 logger = logging.getLogger(__name__)
 

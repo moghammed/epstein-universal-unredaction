@@ -14,7 +14,7 @@ Reads from
 
 Writes to
 ---------
-``payload.typographic_profile``   — :class:`~epsleuth.payload.TypographicProfile`
+``payload.typographic_profile``   — :class:`~epstein_universal_unredaction.payload.TypographicProfile`
 ``payload.gaps_by_redaction_id``  — ``dict[redaction_id, GapProfile]``
 
 Implementation notes
@@ -29,7 +29,7 @@ from __future__ import annotations
 
 import logging
 
-from epsleuth.payload import Payload
+from epstein_universal_unredaction.payload import Payload
 
 logger = logging.getLogger(__name__)
 

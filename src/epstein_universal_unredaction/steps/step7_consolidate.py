@@ -4,8 +4,8 @@ Responsibilities
 ----------------
 * Collect results from all previous steps into a clean, human-reviewable
   output structure.
-* Build the final :class:`~epsleuth.payload.PipelineOutput` containing
-  one :class:`~epsleuth.payload.RedactionResult` per redaction.
+* Build the final :class:`~epstein_universal_unredaction.payload.PipelineOutput` containing
+  one :class:`~epstein_universal_unredaction.payload.RedactionResult` per redaction.
 * Optionally serialise the output to a JSON file (the "sink").
 
 Reads from
@@ -14,7 +14,7 @@ All prior payload fields.
 
 Writes to
 ---------
-``payload.output`` — :class:`~epsleuth.payload.PipelineOutput`
+``payload.output`` — :class:`~epstein_universal_unredaction.payload.PipelineOutput`
 
 Implementation notes
 --------------------
@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import logging
 
-from epsleuth.payload import Payload
+from epstein_universal_unredaction.payload import Payload
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +61,7 @@ def run(payload: Payload) -> Payload:
     #   3. Build PipelineOutput:
     #       - document = payload.meta
     #       - results = list of all RedactionResult
-    #       - pipeline_version = epsleuth.__version__
+    #       - pipeline_version = epstein_universal_unredaction.__version__
     #   4. Assign to payload.output.
 
     raise NotImplementedError(

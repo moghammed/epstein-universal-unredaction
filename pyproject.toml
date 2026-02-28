@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "epsleuth"
+name = "epstein-universal-unredaction"
 version = "0.1.0"
 description = "Unredaction pipeline: reverse-engineer black-box PDF redactions via spatial and typographic analysis."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{ name = "epsleuth contributors" }]
+authors = [{ name = "epstein-universal-unredaction contributors" }]
 keywords = ["pdf", "redaction", "unredaction", "typographic-analysis", "forensics"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -41,14 +41,14 @@ bench = [
 ]
 
 [project.scripts]
-epsleuth = "epsleuth.cli:main"
+epstein-universal-unredaction = "epstein_universal_unredaction.cli:main"
 
 [project.urls]
-Repository = "https://github.com/epsleuth/epsleuth"
-Issues = "https://github.com/epsleuth/epsleuth/issues"
+Repository = "https://github.com/epstein-universal-unredaction/epstein-universal-unredaction"
+Issues = "https://github.com/epstein-universal-unredaction/epstein-universal-unredaction/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/epsleuth"]
+packages = ["src/epstein_universal_unredaction"]
 
 [tool.ruff]
 target-version = "py311"

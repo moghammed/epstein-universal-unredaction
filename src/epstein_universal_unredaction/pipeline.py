@@ -6,7 +6,7 @@ payload through each step sequentially, and per-step wall-clock benchmarking.
 Usage::
 
     from pathlib import Path
-    from epsleuth.pipeline import run_pipeline
+    from epstein_universal_unredaction.pipeline import run_pipeline
 
     output = run_pipeline(Path("document.pdf"))
 """
@@ -20,7 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Protocol
 
-from epsleuth.payload import Payload
+from epstein_universal_unredaction.payload import Payload
 
 logger = logging.getLogger(__name__)
 
@@ -61,13 +61,13 @@ def _build_registry() -> list[StepDescriptor]:
     Lazy imports keep startup fast and let contributors work on one step
     without needing every dependency installed.
     """
-    from epsleuth.steps.step1_ingest import run as ingest
-    from epsleuth.steps.step2_segment import run as segment
-    from epsleuth.steps.step3_redactions import run as redactions
-    from epsleuth.steps.step4_typographic import run as typographic
-    from epsleuth.steps.step5_classify import run as classify
-    from epsleuth.steps.step6_candidates import run as candidates
-    from epsleuth.steps.step7_consolidate import run as consolidate
+    from epstein_universal_unredaction.steps.step1_ingest import run as ingest
+    from epstein_universal_unredaction.steps.step2_segment import run as segment
+    from epstein_universal_unredaction.steps.step3_redactions import run as redactions
+    from epstein_universal_unredaction.steps.step4_typographic import run as typographic
+    from epstein_universal_unredaction.steps.step5_classify import run as classify
+    from epstein_universal_unredaction.steps.step6_candidates import run as candidates
+    from epstein_universal_unredaction.steps.step7_consolidate import run as consolidate
 
     return [
         StepDescriptor(

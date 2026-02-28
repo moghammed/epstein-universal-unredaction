@@ -1,4 +1,4 @@
-"""epsleuth — Unredaction pipeline for PDF documents.
+"""epstein-universal-unredaction — Unredaction pipeline for PDF documents.
 
 Reverse-engineers black-box redactions using spatial and typographic
 analysis.  The pipeline passes a single "fat payload" dictionary through

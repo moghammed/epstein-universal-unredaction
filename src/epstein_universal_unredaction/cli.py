@@ -1,11 +1,11 @@
-"""Command-line interface for epsleuth.
+"""Command-line interface for epstein-universal-unredaction.
 
 Usage::
 
-    epsleuth run document.pdf
-    epsleuth run document.pdf --stop-after segment
-    epsleuth run document.pdf --output results.json
-    epsleuth steps                # list available steps
+    epstein-universal-unredaction run document.pdf
+    epstein-universal-unredaction run document.pdf --stop-after segment
+    epstein-universal-unredaction run document.pdf --output results.json
+    epstein-universal-unredaction steps                # list available steps
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import logging
 import sys
 from pathlib import Path
 
-from epsleuth import __version__
+from epstein_universal_unredaction import __version__
 
 
 def _configure_logging(verbosity: int) -> None:
@@ -30,7 +30,7 @@ def _configure_logging(verbosity: int) -> None:
 
 def _cmd_run(args: argparse.Namespace) -> int:
     """Execute the pipeline on a PDF."""
-    from epsleuth.pipeline import run_pipeline
+    from epstein_universal_unredaction.pipeline import run_pipeline
 
     _configure_logging(args.verbose)
 
@@ -83,7 +83,7 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
 def _cmd_steps(_args: argparse.Namespace) -> int:
     """Print the ordered list of pipeline steps."""
-    from epsleuth.pipeline import _build_registry
+    from epstein_universal_unredaction.pipeline import _build_registry
 
     for i, step in enumerate(_build_registry(), 1):
         print(f"  {i}. {step.name:15s} — {step.description}")
@@ -92,7 +92,7 @@ def _cmd_steps(_args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="epsleuth",
+        prog="epstein-universal-unredaction",
         description="Unredaction pipeline for PDF documents.",
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")

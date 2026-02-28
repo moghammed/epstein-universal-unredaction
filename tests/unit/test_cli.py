@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from epsleuth.cli import build_parser
+from epstein_universal_unredaction.cli import build_parser
 
 
 class TestCLIParser:

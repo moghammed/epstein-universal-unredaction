@@ -1,8 +1,8 @@
-# epsleuth
+# epstein-universal-unredaction
 
 Reverse-engineer black-box redactions in PDF documents using spatial and typographic analysis.
 
-epsleuth is an open-source pipeline that examines the geometry of redaction boxes, the fonts and character metrics of surrounding text, and the semantic context of each gap to produce ranked guesses of what was redacted. It does **not** rely on basic OCR; instead it leans on precise typographic math.
+epstein-universal-unredaction is an open-source pipeline that examines the geometry of redaction boxes, the fonts and character metrics of surrounding text, and the semantic context of each gap to produce ranked guesses of what was redacted. It does **not** rely on basic OCR; instead it leans on precise typographic math.
 
 ## Architecture
 
@@ -26,15 +26,15 @@ The pipeline follows a **Fat Payload** design: a single `Payload` object (a Pyda
 
 ```bash
 # Clone and install in development mode
-git clone https://github.com/epsleuth/epsleuth.git
-cd epsleuth
+git clone https://github.com/epstein-universal-unredaction/epstein-universal-unredaction.git
+cd epstein-universal-unredaction
 pip install -e ".[dev,bench]"
 
 # List pipeline steps
-epsleuth steps
+epstein-universal-unredaction steps
 
 # Run on a PDF (will fail with NotImplementedError until steps are implemented)
-epsleuth run document.pdf -o results.json -vv
+epstein-universal-unredaction run document.pdf -o results.json -vv
 
 # Run tests
 pytest
@@ -46,8 +46,8 @@ pytest benchmarks/ -m benchmark --benchmark-enable
 ## Project Structure
 
 ```
-epsleuth/
-├── src/epsleuth/
+epstein-universal-unredaction/
+├── src/epstein_universal_unredaction/
 │   ├── __init__.py          # Package root, version
 │   ├── cli.py               # CLI entry point (argparse)
 │   ├── payload.py           # Fat Payload schema (Pydantic models)

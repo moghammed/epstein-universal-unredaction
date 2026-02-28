@@ -1,28 +1,28 @@
-# Contributing to epsleuth
+# Contributing to epstein-universal-unredaction
 
 Thanks for your interest in contributing! This guide will help you get started.
 
 ## Development Setup
 
 ```bash
-git clone https://github.com/epsleuth/epsleuth.git
-cd epsleuth
+git clone https://github.com/epstein-universal-unredaction/epstein-universal-unredaction.git
+cd epstein-universal-unredaction
 pip install -e ".[dev,bench]"
 ```
 
 ## How the Pipeline Works
 
-epsleuth uses a **Fat Payload** architecture. A single `Payload` object (defined in `src/epsleuth/payload.py`) flows through 7 sequential steps. Each step:
+epstein-universal-unredaction uses a **Fat Payload** architecture. A single `Payload` object (defined in `src/epstein_universal_unredaction/payload.py`) flows through 7 sequential steps. Each step:
 
 1. Reads data written by earlier steps.
 2. Writes its own results under well-known keys.
 3. Never deletes or overwrites keys owned by earlier steps.
 
-The orchestrator (`src/epsleuth/pipeline.py`) handles routing and per-step timing.
+The orchestrator (`src/epstein_universal_unredaction/pipeline.py`) handles routing and per-step timing.
 
 ## Working on a Step
 
-Each step lives in `src/epsleuth/steps/step{N}_{name}.py` and exposes a single function:
+Each step lives in `src/epstein_universal_unredaction/steps/step{N}_{name}.py` and exposes a single function:
 
 ```python
 def run(payload: Payload) -> Payload:
@@ -33,7 +33,7 @@ The stub files contain detailed docstrings explaining what each step should do, 
 
 ### Conventions
 
-- **Coordinates**: all bounding boxes are normalized to `[0, 1]`. Use helpers in `src/epsleuth/utils/coords.py`.
+- **Coordinates**: all bounding boxes are normalized to `[0, 1]`. Use helpers in `src/epstein_universal_unredaction/utils/coords.py`.
 - **Physical units**: all physical measurements (page size, gap width, character width) are in **millimeters**.
 - **IDs**: use the pattern `p{page}_b{block}` for blocks, `p{page}_r{index}` for redactions.
 

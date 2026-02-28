@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import pytest
 
-from epsleuth.payload import (
+from epstein_universal_unredaction.payload import (
     DocumentMeta,
     PageMeta,
     Payload,
@@ -78,5 +78,5 @@ class TestPayloadSerialization:
 # class TestStep2Segment:
 #     def test_segment_10_pages(self, benchmark) -> None:
 #         payload = _make_payload_with_pages(10, 100)
-#         from epsleuth.steps.step2_segment import run
+#         from epstein_universal_unredaction.steps.step2_segment import run
 #         benchmark(run, payload)

@@ -15,7 +15,7 @@ format:  ## Auto-format code
 	ruff check --fix src/ tests/ benchmarks/
 
 typecheck:  ## Run type checker (mypy)
-	mypy src/epsleuth/
+	mypy src/epstein_universal_unredaction/
 
 test:  ## Run unit tests (skip slow)
 	pytest -m "not slow and not benchmark" -q

@@ -9,8 +9,8 @@ Responsibilities
 
 Writes to
 ---------
-``payload.meta``  — :class:`~epsleuth.payload.DocumentMeta`
-``payload.pages`` — list of :class:`~epsleuth.payload.PageMeta`
+``payload.meta``  — :class:`~epstein_universal_unredaction.payload.DocumentMeta`
+``payload.pages`` — list of :class:`~epstein_universal_unredaction.payload.PageMeta`
 
 Implementation notes
 --------------------
@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import logging
 
-from epsleuth.payload import Payload
+from epstein_universal_unredaction.payload import Payload
 
 logger = logging.getLogger(__name__)
 

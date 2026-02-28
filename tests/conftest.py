@@ -1,4 +1,4 @@
-"""Shared test fixtures for epsleuth."""
+"""Shared test fixtures for epstein-universal-unredaction."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from epsleuth.payload import (
+from epstein_universal_unredaction.payload import (
     Candidate,
     DocumentMeta,
     GapProfile,

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from epsleuth.pipeline import (
+from epstein_universal_unredaction.pipeline import (
     _build_registry,
     create_payload,
     get_step_names,
@@ -54,7 +54,7 @@ class TestRunPipeline:
     def test_rejects_missing_file(self) -> None:
         from pathlib import Path
 
-        from epsleuth.pipeline import run_pipeline
+        from epstein_universal_unredaction.pipeline import run_pipeline
 
         with pytest.raises(FileNotFoundError):
             run_pipeline(Path("/nonexistent/file.pdf"))

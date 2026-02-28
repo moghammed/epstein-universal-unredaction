@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from epsleuth.payload import (
+from epstein_universal_unredaction.payload import (
     Candidate,
     DocumentMeta,
     GapProfile,
